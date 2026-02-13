@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Product Details</title>
+
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="Landing.html">Home</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Services</a></li>
+                    <li><a href="">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+        <section class="products-container">
+            <article class="product-card">
+                <img src="download.jpg" alt="OFF!® Overtime">
+                <h2>OFF!® Overtime</h2>
+                <p class="product-description">Long-lasting protection for outdoor activities.</p>
+                <p class="product-price">₱12.99</p>
+                <button class="view-details">View Details</button>
+            </article>
+
+            <article class="product-card">
+                <img src="download1.jpg" alt="OFF!® Baby">
+                <h2>OFF!® Baby</h2>
+                <p class="product-description">Gentle formula for babies and sensitive skin.</p>
+                <p class="product-price">₱9.99</p>
+                <button class="view-details">View Details</button>
+            </article>
+
+            <article class="product-card">
+                <img src="download2.jpg" alt="OFF!® FamilyCare">
+                <h2>OFF!® FamilyCare</h2>
+                <p class="product-description">Family-friendly protection for all ages.</p>
+                <p class="product-price">₱14.99</p>
+                <button class="view-details">View Details</button>
+            </article>
+        </section>
+
+        <aside class="sidebar">
+            <h3>Filter Products</h3>
+            <form>
+                <fieldset>
+                    <legend>Price Range</legend>
+                    <label><input type="checkbox" name="price" value="under-10"> Under ₱10</label><br>
+                    <label><input type="checkbox" name="price" value="10-15"> ₱10 - ₱15</label><br>
+                    <label><input type="checkbox" name="price" value="above-15"> Above ₱15</label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Category</legend>
+                    <label><input type="checkbox" name="category" value="spray"> Spray</label><br>
+                    <label><input type="checkbox" name="category" value="lotion"> Lotion</label><br>
+                    <label><input type="checkbox" name="category" value="wipes"> Wipes</label>
+                </fieldset>
+
+                <button type="submit">Apply Filters</button>
+            </form>
+        </aside>
+        </main>
+    </body>
+</html>
