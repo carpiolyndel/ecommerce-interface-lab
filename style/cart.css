@@ -1,0 +1,95 @@
+
+
+
+h1 {
+    text-align: center;
+    color: var(--text-main);
+}
+
+section {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    text-align: center;
+}
+
+section:empty {
+    background-color: var(--danger-bg);
+    color: var(--danger);
+    font-weight: bold;
+    border: 2px dashed var(--danger);
+}
+
+/* Cart-specific: show a distinct empty state when there are no items */
+.cart-items:empty {
+    min-height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--danger-bg);
+    border: 1px dashed var(--danger);
+    border-radius: 8px;
+    color: var(--danger);
+}
+
+.cart-items:empty::before {
+    content: "Your cart is empty";
+    font-weight: 700;
+}
+
+/* Automatically add currency symbol before price values */
+.price::before {
+    content: "₱";
+    margin-right: 4px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: var(--white);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+}
+
+ul li img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+ul li h3 {
+    margin: 0 10px;
+    flex: 1;
+}
+
+ul li p {
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+ul li p::before {
+    content: "₱"; 
+    margin-right: 2px;
+}
+
+ul li input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+section p {
+    font-weight: bold;
+    font-size: 1.2em;
+}

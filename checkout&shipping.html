@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Checkout & Shipping</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/checkout.css">
+    </head>
+<body>
+
+    <h1>Checkout</h1>
+
+    <div class="checkout-wrapper">
+        <main class="checkout-main">
+            <section class="shipping">
+                <fieldset>
+                    <legend>Shipping Address</legend>
+
+                    <p>
+                        <label for="name">Name</label><br>
+                        <input type="text" id="name" name="name" required>
+                    </p>
+
+                    <p>
+                        <label for="municipality">Municipality</label><br>
+                        <input type="text" id="municipality" name="municipality" required>
+                    </p>
+
+                    <p>
+                        <label for="address">Home Address</label><br>
+                        <input type="text" id="address" name="address" required>
+                    </p>
+
+                    <p>
+                        <label for="phone">Cellphone Number</label><br>
+                        <input type="tel" id="phone" name="phone" pattern="[0-9\-\s\+]{7,15}" required>
+                    </p>
+
+                    <p>
+                        <label for="street">Street</label><br>
+                        <input type="text" id="street" name="street">
+                    </p>
+
+                    <p>
+                        <label for="zip">Zip</label><br>
+                        <input type="text" id="zip" name="zip" required>
+                    </p>
+                </fieldset>
+            </section>
+
+            <section class="payment">
+                <form>
+                    <p>Payment Method:</p>
+
+                    <label>
+                        <input type="radio" name="payment" value="credit-card" required>
+                        Credit Card
+                    </label>
+                     <br>
+
+                     <label>
+                        <input type="radio" name="payment" value="paypal">
+                        PayPal
+                     </label>
+                     <br><br>
+
+                     <button type="submit">Place Order</button>
+                </form>
+            </section>
+        </main>
+
+        <aside>
+            <h2>Order Summary</h2>
+            <p>Items Total: Php500.00</p>
+            <p>Shipping: Php20.00</p>
+            <p><strong>Total: Php520.00</strong></p>
+        </aside>
+    </div>
+
+</body>
+</html>

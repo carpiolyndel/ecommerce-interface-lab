@@ -1,0 +1,93 @@
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-family: Arial, sans-serif;
+}
+
+table th, table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+table td:first-child {
+    font-weight: bold;
+    color: var(--primary-color);
+    background-color: var(--bg-light);
+}
+
+table th {
+    background-color: var(--accent-2);
+    color: var(--white);
+}
+
+article p {
+    position: relative;
+    font-style: italic;
+    padding: 10px 20px;
+    margin-bottom: 15px;
+    background-color: var(--bg-light);
+    border-radius: 8px;
+}
+
+article p::before {
+    content: "“";
+    font-size: 2rem;
+    position: absolute;
+    left: 10px;
+    top: -5px;
+    color: var(--accent-2);
+}
+
+article p::after {
+    content: "”";
+    font-size: 2rem;
+    position: absolute;
+    right: 10px;
+    bottom: -5px;
+    color: var(--accent-2);
+}
+
+input[type="number"], input[type="text"], input[type="range"] {
+    padding: 8px;
+    margin: 5px 0 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: var(--accent-2);
+    color: var(--white);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--hover-color);
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: var(--muted-bg);
+    color: var(--text-main);
+}
+
+
+.order-history li::marker {
+    color: var(--accent-2);
+    font-weight: bold;
+}

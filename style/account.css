@@ -1,0 +1,71 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+header {
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header h1 {
+    font-size: 2rem;
+}
+
+
+main {
+    padding: 30px 40px;
+    max-width: 800px;
+    margin: auto;
+}
+
+main h2 {
+    margin-bottom: 20px;
+
+}
+
+details {
+
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+details summary {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+details p {
+    margin-top: 8px;
+    margin-left: 15px;
+}
+
+/* Order history list marker styling */
+.order-history {
+    margin-top: 10px;
+    padding-left: 1.2rem;
+}
+
+.order-history li {
+    margin-bottom: 8px;
+}
+
+.order-history li::marker {
+    color: var(--accent-2);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
