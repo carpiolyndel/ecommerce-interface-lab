@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+ <html>
+  <head>
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/cart.css">
+  </head>
+  <body>
+    <header>
+        <img src="logo.jpg" alt="OFF!® Products Logo">
+        <nav>
+            <ul>
+                <li><a href="landing.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="account.html">Account</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="cart-main">
+        <h1>Shopping Cart</h1>
+        
+        <section class="cart-content">
+            <div class="cart-items">
+                <div class="cart-item">
+                    <img src="download.jpg" alt="Product One">
+                    <div class="item-details">
+                        <h3>Product One</h3>
+                        <p class="item-price"><span class="price">250.00</span></p>
+                    </div>
+                    <div class="item-quantity">
+                        <label for="qty1">Qty:</label>
+                        <input type="number" id="qty1" min="1" value="1">
+                    </div>
+                    <div class="item-total">₱250.00</div>
+                    <button class="remove-btn">×</button>
+                </div>
+
+                <div class="cart-item">
+                    <img src="download1.jpg" alt="Product Two">
+                    <div class="item-details">
+                        <h3>Product Two</h3>
+                        <p class="item-price"><span class="price">250.00</span></p>
+                    </div>
+                    <div class="item-quantity">
+                        <label for="qty2">Qty:</label>
+                        <input type="number" id="qty2" min="1" value="2">
+                    </div>
+                    <div class="item-total">₱500.00</div>
+                    <button class="remove-btn">×</button>
+                </div>
+            </div>
+
+            <aside class="cart-summary">
+                <h2>Order Summary</h2>
+                <div class="summary-row">
+                    <span>Subtotal:</span>
+                    <span>₱500.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Shipping:</span>
+                    <span>₱50.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Tax:</span>
+                    <span>₱45.00</span>
+                </div>
+                <div class="summary-total">
+                    <span>Total:</span>
+                    <span>₱595.00</span>
+                </div>
+                <button class="checkout-btn" onclick="location.href='checkout&shipping.html'">Proceed to Checkout</button>
+                <a href="products.html" class="continue-shopping">Continue Shopping</a>
+            </aside>
+        </section>
+    </main>
+ 
+</body>  
+ </html>
