@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* ========================================
    LABORATORY 2 & 3: LANDING PAGE ONLY
    FIXED HERO COLORS
@@ -251,4 +252,43 @@
 
 .product-card {
     animation: fadeIn 0.6s ease;
+=======
+.product-list {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.product-card {
+    flex: 1 1 250px;
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.product-card:hover {
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.discount {
+    color: var(--danger);
+    font-weight: bold;
+}
+
+img.discount-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+>>>>>>> f587d9850a7ec3497f0629f31c41a4e72a48240b
 }
