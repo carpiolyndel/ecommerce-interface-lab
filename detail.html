@@ -19,65 +19,88 @@
             </ul>
         </nav>
     </header>
-
+<main>  
     <h1>OFF!® Overtime</h1>
 
-    <main>
-        <div class="product-image">
-        <img src="download.jpg">
-    </div>
+    
+        <div class="product-detail">
+            <div class="product-image">
+                <img src="download.jpg" alt="OFF!® Overtime">
+            </div>
 
-        <div>
-            <h2>Purchase OFF!® Overtime</h2>
-            <form>
-                <label for="quantity">Quantity:</label>
-                <input type="number" id="quantity" name="quantity" min="1" value="1">
-                <button type="submit">Add to Cart</button>
-            </form>
+        <div class="product-info">
+                <p class="product-price">250.00</p>
+
+                <form class="add-to-cart-form">
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+                    <button type="submit">Add to Cart</button>
+                </form>
+            </div>
+                <p class="product-description">
+                    OFF!® Overtime is a powerful insect repellent designed to provide long-lasting protection against mosquitoes and other biting insects. With its DEET-based formula, it offers up to 8 hours of effective protection, making it ideal for outdoor activities such as camping, hiking, and fishing. The spray application allows for easy and even coverage on exposed skin and clothing. Additionally, OFF!® Overtime is water-resistant for up to 4 hours, ensuring continued protection even during water activities. Its fresh, mild fragrance makes it a popular choice for those seeking reliable insect repellent without an overpowering scent.
+                </p>
         </div>
 
-        <section>
-            <h2>Product Information</h2>
+         <section class="specifications">
+            <h2>Technical Specifications</h2>
             <div class="table-responsive">
-            <table border=".5">
-                <tr>
-                    <th>Specification</th>
-                    <th>Details</th>
-                </tr>
-
-                <tr>
-                    <td>Active Ingredient</td>
-                    <td>DEET 25%</td>
-                </tr>
-
-                <tr>
-                    <td>Usage</td>
-                    <td>Apply to exposed skin and clothing for protection against mosquitoes, ticks, and other biting
-                        insects.</td>
-                </tr>
-            </table>
+                <table>
+                    <tr>
+                        <th>Specification</th>
+                        <th>Details</th>
+                    </tr>
+                    <tr>
+                        <td>Active Ingredient</td>
+                        <td>DEET 25%</td>
+                    </tr>
+                    <tr>
+                        <td>Protection Duration</td>
+                        <td>Up to 8 hours</td>
+                    </tr>
+                    <tr>
+                        <td>Application</td>
+                        <td>Spray evenly on exposed skin and clothing</td>
+                    </tr>
+                    <tr>
+                        <td>Water Resistance</td>
+                        <td>Water-resistant up to 4 hours</td>
+                    </tr>
+                    <tr>
+                        <td>Scent</td>
+                        <td>Fresh, mild fragrance</td>
+                    </tr>
+                    <tr>
+                        <td>Size</td>
+                        <td>100ml / 150ml / 200ml</td>
+                    </tr>
+                </table>
             </div>
         </section>
-    </main>
 
-    <section>
+    <section class="review">
         <article>
             <h2>Customer Reviews</h2>
-            <div>
-                <input type="range" id=rating name="rating" min="0" max="5">
-                <label for="rating">Rate this product:</label>
-            </div>
-
-            <input type="text" placeholder="Write your review here">
-            <button type="submit">Submit Review</button>
-
             <p><strong>Lyndel C.</strong>: "OFF!® Overtime is my go-to insect repellent for camping trips. It works
                 great and lasts for hours!"</p>
             <p><strong>Irene C.</strong>: "I love that OFF!® Overtime is effective against mosquitoes without being too
                 harsh on my skin."</p>
         </article>
-    </section>
+        <form class="review-form">
+                <h3>Write a Review</h3>
+                <div>
+                    <label for="rating">Rating:</label>
+                    <input type="range" id="rating" name="rating" min="0" max="5" step="1">
+                </div>
+                <div>
+                    <label for="review-text">Your Review:</label>
+                    <textarea id="review-text" name="review" rows="4" placeholder="Write your review here..."></textarea>
+                </div>
+                <button type="submit">Submit Review</button>
+            </form>
 
+    </section>
+    </main>
 
     <footer>
         <p>&copy; 2026 Carpio® Products. All rights reserved.</p>

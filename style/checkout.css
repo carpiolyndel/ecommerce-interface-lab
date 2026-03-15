@@ -6,13 +6,27 @@ h1 {
     font-weight: 700;
 }
 
-.checkout-wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px 60px;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 30px;
+/* Order Summary */
+.checkout-wrapper aside {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.order-total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 2px solid var(--border);
+    font-weight: bold;
 }
 
 .checkout-main {
@@ -175,6 +189,7 @@ aside {
     border-radius: 10px;
     border: 1px solid var(--border);
     box-shadow: 0 2px 8px rgba(44,62,80,0.06);
+    gap: 1rem;
 }
 
 aside h2 {
