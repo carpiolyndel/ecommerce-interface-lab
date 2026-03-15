@@ -1,9 +1,9 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
+<html>
 <head>
-    <title> My Account</title>
+    <title>My Account</title>
     <link rel="stylesheet" href="style/style.css">
-    <link rel="stylesheet" href="/style/account.css">
+    <link rel="stylesheet" href="style/account.css">
 </head>
 <body>
      
@@ -11,7 +11,7 @@
         <img src="logo.jpg" alt="logo" />
         <nav>
             <ul>
-                <li><a href="Landing.html">Home</a></li>
+                <li><a href="landing.html">Home</a></li>
                 <li><a href="products.html">Products</a></li>
                 <li><a href="cart.html">Cart</a></li>
                 <li><a href="account.html">Account</a></li>
@@ -20,60 +20,54 @@
     </header>
 
     <main>
+        <div class="user-header" id="user-header">
+            <h1 id="welcome-message">Welcome, Guest!</h1>
+            <nav class="account-nav" id="account-nav">
+                <ul>
+                    <li><a href="#order-history" id="order-history-link">Order History</a></li>
+                    <li><a href="#profile" id="profile-link">Profile Settings</a></li>
+                    <li><a href="#wishlist" id="wishlist-link">Wishlist</a></li>
+                </ul>
+            </nav>
+        </div>
+
         <h2>Previous Purchase</h2>
 
-        <details> 
-            <summary>Order #1001</summary>
-            <p>Date: Feb. 13, 2026</p>
-            <p>Total: Php520.00</p>
-            <p>Items: Lotion,Shampoo</p>
-        </details>
+        <div id="orders-container">
+            <details id="order-1001"> 
+                <summary>Order #1001</summary>
+                <p>Date: <span id="order-1001-date">Feb. 13, 2026</span></p>
+                <p>Total: <span id="order-1001-total">Php520.00</span></p>
+                <p>Items: <span id="order-1001-items">Lotion, Shampoo</span></p>
+            </details>
+
+            <details id="order-1000"> 
+                <summary>Order #1000</summary>
+                <p>Date: <span id="order-1000-date">Jan. 25, 2026</span></p>
+                <p>Total: <span id="order-1000-total">Php320.00</span></p>
+                <p>Items: <span id="order-1000-items">OFF! Baby</span></p>
+            </details>
+
+            <details id="order-0999"> 
+                <summary>Order #0999</summary>
+                <p>Date: <span id="order-0999-date">Dec. 12, 2025</span></p>
+                <p>Total: <span id="order-0999-total">Php150.00</span></p>
+                <p>Items: <span id="order-0999-items">OFF! FamilyCare</span></p>
+            </details>
+        </div>
 
         <h3>Order History</h3>
-        <ul class="order-history">
-            <li>Order #1001 — Php520.00 — Feb 13, 2026</li>
-            <li>Order #1000 — Php320.00 — Jan 25, 2026</li>
-            <li>Order #0999 — Php150.00 — Dec 12, 2025</li>
+        <ul class="order-history" id="order-history-list">
+            <li id="history-1001">Order #1001 — Php520.00 — Feb 13, 2026</li>
+            <li id="history-1000">Order #1000 — Php320.00 — Jan 25, 2026</li>
+            <li id="history-0999">Order #0999 — Php150.00 — Dec 12, 2025</li>
         </ul>
     </main>
+
+    <footer>
+        <p>&copy; 2026 Carpio® Products. All rights reserved.</p>
+    </footer>
+
+    <script src="solution.js"></script>
 </body>
-=======
-<!DOCTYPE html>
-<head>
-    <title> My Account</title>
-    <link rel="stylesheet" href="style/style.css">
-    <link rel="stylesheet" href="/style/account.css">
-</head>
-<body>
-     
-    <header>
-        <h1>Off</h1>
-        <nav>
-           <ul>
-            <li><a href="#">Order History</a></li>
-             <li><a href="#">Profile Setting</a></li>
-              <li><a href="#">Wishlist</a></li>
-           </ul>
-        </nav>
-    </header>
-
-    <main>
-        <h2>Previous Purchase</h2>
-
-        <details> 
-            <summary>Order #1001</summary>
-            <p>Date: Feb. 13, 2026</p>
-            <p>Total: Php520.00</p>
-            <p>Items: Lotion,Shampoo</p>
-        </details>
-
-        <h3>Order History</h3>
-        <ul class="order-history">
-            <li>Order #1001 — Php520.00 — Feb 13, 2026</li>
-            <li>Order #1000 — Php320.00 — Jan 25, 2026</li>
-            <li>Order #0999 — Php150.00 — Dec 12, 2025</li>
-        </ul>
-    </main>
-</body>
->>>>>>> f587d9850a7ec3497f0629f31c41a4e72a48240b
 </html>
