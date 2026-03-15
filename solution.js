@@ -1,6 +1,5 @@
 // ================================================
 // LABORATORY 4: JAVASCRIPT FUNDAMENTALS
-// SOLUTION.JS WITH TESTING
 // ================================================
 
 // ================================================
@@ -158,3 +157,6 @@ console.log(safeDivide(100, 4));
 console.log(safeDivide(0, 5));
 console.log(safeDivide(-10, 2));
 console.log(safeDivide(7, 3));
+
+console.log('');
+console.log('=== ALL TESTS COMPLETE ===');
