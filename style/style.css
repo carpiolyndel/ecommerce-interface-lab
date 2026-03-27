@@ -74,6 +74,14 @@ button, .btn {
     transition: all 0.3s ease;
 }
 
+.product-price::before,
+.price::before,
+.item-price::before,
+.item-total::before {
+    content: "₱";
+    margin-right: 2px;
+}
+
 button:hover, .btn:hover {
     background-color: var(--hover-color);
     transform: translateY(-2px);
@@ -92,12 +100,6 @@ button:focus, .btn:focus {
 img {
     max-width: 100%;
     height: auto;
-}
-
-/* ========== LAB 2 TASK 4: PRICE PSEUDO-ELEMENT ========== */
-.price::before {
-    content: "₱";
-    margin-right: 2px;
 }
 
 /* ========== LAB 2 TASK 4: FORM VALIDATION ========== */
@@ -258,6 +260,22 @@ footer p {
         top: 100px;
         height: fit-content;
     }
+}
+
+footer {
+    margin-top: auto;
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+}
+
+footer p {
+    margin: 0;
+    color: white;
 }
 
 /* ========== LAB 3 TASK 7: ANIMATIONS ========== */

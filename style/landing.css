@@ -212,11 +212,6 @@
     display: block;
 }
 
-.price::before {
-    content: "₱";
-    margin-right: 2px;
-}
-
 .discount {
     color: var(--danger);
     background-color: var(--danger-bg);

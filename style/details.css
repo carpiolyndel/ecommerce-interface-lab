@@ -37,11 +37,33 @@
     color: var(--primary-color);
 }
 
-.product-info .price {
+/* FIXED: Price Style with Peso Sign */
+.product-price {
     font-size: 1.8rem;
     color: var(--accent-color);
     margin-bottom: 20px;
+    font-weight: bold;
     display: block;
+}
+
+/* Add peso sign using pseudo-element */
+.product-price::before {
+    content: "₱";
+    margin-right: 2px;
+}
+
+/* Alternative if using .price class */
+.price {
+    font-size: 1.8rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    font-weight: bold;
+    display: block;
+}
+
+.price::before {
+    content: "₱";
+    margin-right: 2px;
 }
 
 /* ========== LAB 1 TASK 3: ADD TO CART FORM ========== */
@@ -169,7 +191,7 @@ table td:first-child {
     padding: 25px 30px;
     background-color: var(--white);
     border-radius: 8px;
-    border-left: 4px solid;
+    border-left: 4px solid var(--accent-color);
 }
 
 .review::before {
@@ -258,6 +280,38 @@ table td:first-child {
     background-color: var(--hover-color);
 }
 
+/* Review Items */
+.review-item {
+    background-color: var(--white);
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    position: relative;
+    padding-left: 35px;
+}
+
+.review-item::before {
+    content: "“";
+    font-size: 2rem;
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    color: var(--accent-color);
+    opacity: 0.5;
+    font-family: Georgia, serif;
+}
+
+.review-item p {
+    margin: 0;
+    color: var(--text-secondary);
+}
+
+.review-item strong {
+    color: var(--primary-color);
+}
+
+/* Article Reviews */
 article p {
     position: relative;
     font-style: italic;
@@ -286,6 +340,7 @@ article p::after {
     color: var(--accent-2);
 }
 
+/* Input Styles */
 input[type="number"],
 input[type="text"],
 input[type="range"] {
@@ -297,8 +352,9 @@ input[type="range"] {
     box-sizing: border-box;
 }
 
+/* Button Styles */
 button {
-    background-color: var(--accent-2);
+    background-color: var(--accent-color);
     color: var(--white);
     border: none;
     padding: 10px 20px;
@@ -316,14 +372,114 @@ button:active {
     transform: scale(0.95);
 }
 
+/* Section Animation */
 section {
     animation: fadeIn 1s ease-in-out;
 }
 
+/* Footer */
 footer {
     text-align: center;
     margin-top: 30px;
     padding: 20px;
     background-color: var(--muted-bg);
     color: var(--text-main);
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 768px) {
+    .product-detail {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    .product-image {
+        min-width: auto;
+    }
+    
+    .product-info {
+        min-width: auto;
+    }
+    
+    .product-price,
+    .price {
+        font-size: 1.5rem;
+    }
+    
+    .product-info h1 {
+        font-size: 1.5rem;
+    }
+    
+    .specifications h2,
+    .reviews h2 {
+        font-size: 1.3rem;
+    }
+    
+    table td:first-child {
+        width: 40%;
+    }
+    
+    .review-form {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        padding: 15px;
+    }
+    
+    .product-detail {
+        padding: 15px;
+    }
+    
+    .product-price,
+    .price {
+        font-size: 1.3rem;
+    }
+    
+    .add-to-cart-form input[type="number"] {
+        width: 100%;
+    }
+    
+    table td,
+    table th {
+        padding: 8px;
+        font-size: 0.85rem;
+    }
+    
+    .review-item {
+        padding: 15px;
+        padding-left: 30px;
+    }
+    
+    .review-item::before {
+        font-size: 1.5rem;
+        left: 8px;
+    }
 }

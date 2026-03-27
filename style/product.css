@@ -94,3 +94,201 @@ main {
     background-color: var(--hover-color, #ff6600);
     animation: pulse 0.6s ease;
 }
+
+/* Additional styles for dynamic product rendering */
+
+/* Products container grid layout */
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Product card styling */
+.product-card {
+    padding: 16px;
+    border: 1px solid rgba(44,62,80,0.08);
+    border-radius: 10px;
+    background-color: #ffffff;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(44,62,80,0.06);
+    color: var(--text-main);
+    animation: fadeIn 0.6s ease forwards;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(44,62,80,0.12);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.product-card h2 {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin: 10px 0 6px;
+    min-height: 50px;
+}
+
+.product-description {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+    line-height: 1.4;
+    flex-grow: 1;
+}
+
+.product-price {
+    color: var(--accent-color);
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+}
+
+/* Button styling for product cards */
+.product-card .view-details,
+.product-card .add-to-cart-btn {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.product-card .view-details {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.product-card .view-details:hover {
+    background-color: #1a2a3a;
+    transform: translateY(-2px);
+}
+
+.product-card .add-to-cart-btn {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.product-card .add-to-cart-btn:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-2px);
+}
+
+/* Loading state */
+.loading {
+    text-align: center;
+    padding: 60px;
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    grid-column: 1 / -1;
+}
+
+/* No products message */
+.no-products {
+    text-align: center;
+    padding: 60px;
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    grid-column: 1 / -1;
+}
+
+/* Reset button styling */
+.reset-btn {
+    margin-top: 10px;
+    background-color: #6c757d;
+}
+
+.reset-btn:hover {
+    background-color: #5a6268;
+}
+
+/* Filter form styling */
+.sidebar form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sidebar fieldset {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 5px;
+}
+
+.sidebar legend {
+    font-weight: 600;
+    color: var(--primary-color);
+    padding: 0 8px;
+}
+
+.sidebar label {
+    display: block;
+    margin: 8px 0;
+    cursor: pointer;
+}
+
+.sidebar input[type="radio"] {
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+.sidebar button {
+    margin-top: 5px;
+    padding: 10px;
+    font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+    
+    .sidebar {
+        order: 2;
+        border-right: none;
+        border-top: 1px solid var(--border);
+        margin-top: 20px;
+    }
+    
+    .products-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 15px;
+    }
+    
+    .product-card img {
+        height: 150px;
+    }
+    
+    .product-card h2 {
+        font-size: 1rem;
+        min-height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .products-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .product-card img {
+        height: 180px;
+    }
+}
