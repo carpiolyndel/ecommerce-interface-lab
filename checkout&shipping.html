@@ -4,7 +4,7 @@
     <title>Checkout & Shipping</title>
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/checkout.css">
-    </head>
+</head>
 <body>
 
     <header>
@@ -19,68 +19,67 @@
         </nav>
     </header>
 
-    <h1>Checkout</h1>
+    <main>
+        <h1>Checkout</h1>
 
-    <div class="checkout-wrapper">
-        <main class="checkout-main">
-            <section class="shipping">
-                <h2>Shipping Address</h2>
-                <form>
-                    <fieldset>
-                        <legend>Delivery Information</legend>
-                        
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="address">Street Address</label>
-                            <input type="text" id="address" name="address" placeholder="123 Main Street" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="apartment">Apartment, Suite, Unit (Optional)</label>
-                            <input type="text" id="apartment" name="apartment" placeholder="Apt 4B">
-                        </div>
-
-                        <div class="form-row">
+        <div class="checkout-wrapper">
+            <div class="checkout-form-container">
+                <section class="shipping">
+                    <h2>Shipping Address</h2>
+                    <form id="checkout-form">
+                        <fieldset>
+                            <legend>Delivery Information</legend>
+                            
                             <div class="form-group">
-                                <label for="municipality">City</label>
-                                <input type="text" id="municipality" name="municipality" required>
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" required>
                             </div>
 
                             <div class="form-group">
-                                <label for="province">Province</label>
-                                <input type="text" id="province" name="province" placeholder="e.g., Metro Manila" required>
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="zip">Postal Code</label>
-                                <input type="text" id="zip" name="zip" required>
+                                <label for="address">Street Address</label>
+                                <input type="text" id="address" name="address" placeholder="Zone 1" required>
                             </div>
 
                             <div class="form-group">
-                                <label for="country">Country</label>
-                                <select id="country" name="country" required>
-                                    <option value="">Select Country</option>
-                                    <option value="PH">Philippines</option>
-                                    <option value="US">United States</option>
-                                    <option value="CA">Canada</option>
-                                    <option value="AU">Australia</option>
-                                </select>
+                                <label for="apartment">Apartment, Suite, Unit (Optional)</label>
+                                <input type="text" id="apartment" name="apartment" placeholder="Saturnino">
                             </div>
-                        </div>
-                    </fieldset>
-                </form>
-            </section>
-        </main>
-<aside>
-            <section class="payment">
-                <h2>Payment Method</h2>
-                <form>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="municipality">City</label>
+                                    <input type="text" id="municipality" name="municipality" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="province">Province</label>
+                                    <input type="text" id="province" name="province" placeholder="e.g., Northern Samar" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="zip">Postal Code</label>
+                                    <input type="text" id="zip" name="zip" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="country">Country</label>
+                                    <select id="country" name="country" required>
+                                        <option value="">Select Country</option>
+                                        <option value="PH">Philippines</option>
+                                        <option value="US">United States</option>
+                                        <option value="CA">Canada</option>
+                                        <option value="AU">Australia</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </section>
+
+                <section class="payment">
+                    <h2>Payment Method</h2>
                     <div class="payment-options">
                         <div class="payment-option">
                             <label>
@@ -99,35 +98,43 @@
                         <div class="payment-option">
                             <label>
                                 <input type="radio" name="payment" value="debit-card">
-                                Debit Card
+                                Gcash / Debit Card
                             </label>
                         </div>
                     </div>
+                </section>
+            </div>
 
-                    <button type="submit" class="submit-btn">Place Order</button>
-                </form>
-            </section>
+            <div class="order-summary">
+                <h2>Order Summary</h2>
+                <div class="order-items" id="order-items">
+                    <!-- Cart items will appear here -->
+                </div>
+                <div class="order-item">
+                    <span>Subtotal</span>
+                    <span id="checkout-subtotal">₱0.00</span>
+                </div>
+                <div class="order-item">
+                    <span>Shipping</span>
+                    <span id="checkout-shipping">₱0.00</span>
+                </div>
+                <div class="order-item">
+                    <span>Tax</span>
+                    <span id="checkout-tax">₱0.00</span>
+                </div>
+                <div class="order-total">
+                    <span>Total:</span>
+                    <span id="checkout-total">₱0.00</span>
+                </div>
+                <button type="submit" form="checkout-form" class="submit-btn">Place Order</button>
+            </div>
+        </div>
+    </main>
 
-        <aside>
-            <h2>Order Summary</h2>
-            <div class="order-item">
-                <span>Subtotal</span>
-                <span>₱500.00</span>
-            </div>
-            <div class="order-item">
-                <span>Shipping</span>
-                <span>₱50.00</span>
-            </div>
-            <div class="order-item">
-                <span>Tax</span>
-                <span>₱45.00</span>
-            </div>
-            <div class="order-total">
-                <span>Total:</span>
-                <span>₱595.00</span>
-            </div>
-        </aside>
-    </div>
+    <footer>
+        <p>&copy; 2026 Carpio® Products. All rights reserved.</p>
+    </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>

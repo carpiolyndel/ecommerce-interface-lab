@@ -116,11 +116,6 @@
     flex-shrink: 0;
 }
 
-.item-total::before {
-    content: "₱";
-    margin-right: 2px;
-}
-
 /* Remove Button */
 .remove-btn {
     background-color: var(--danger-bg);

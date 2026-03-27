@@ -5,7 +5,7 @@
 /* ========== LAB 2 TASK 1: CSS VARIABLES ========== */
 :root {
     --primary-color: #2c3e50;
-    --accent-color: #007bff;
+    --accent-color:  #007bff;
     --accent-2: #e67e22;
     --success: #28a745;
     --danger: #d9534f;
@@ -32,6 +32,12 @@ body {
     color: var(--text-main);
     font-size: 16px;
     line-height: 1.6;
+}
+
+
+/* Button Active Effect */
+button:active {
+    transform: scale(0.98);
 }
 
 /* ========== LAB 2 TASK 1: TYPOGRAPHY ========== */
@@ -74,6 +80,14 @@ button, .btn {
     transition: all 0.3s ease;
 }
 
+.product-price::before,
+.price::before,
+.item-price::before,
+.item-total::before {
+    content: "₱";
+    margin-right: 2px;
+}
+
 button:hover, .btn:hover {
     background-color: var(--hover-color);
     transform: translateY(-2px);
@@ -92,12 +106,6 @@ button:focus, .btn:focus {
 img {
     max-width: 100%;
     height: auto;
-}
-
-/* ========== LAB 2 TASK 4: PRICE PSEUDO-ELEMENT ========== */
-.price::before {
-    content: "₱";
-    margin-right: 2px;
 }
 
 /* ========== LAB 2 TASK 4: FORM VALIDATION ========== */
@@ -260,6 +268,22 @@ footer p {
     }
 }
 
+footer {
+    margin-top: auto;
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+}
+
+footer p {
+    margin: 0;
+    color: white;
+}
+
 /* ========== LAB 3 TASK 7: ANIMATIONS ========== */
 @keyframes fadeIn {
     from {
@@ -290,4 +314,71 @@ footer p {
 
 .checkout-btn:hover {
     animation: pulse 0.5s ease;
+}
+
+
+/* ========== New Added the Error Message ========== */
+
+/* Error Styles */
+.error {
+    border-color: #d9534f !important;
+    background-color: rgba(217,83,79,0.08) !important;
+}
+
+.error-message {
+    color: #d9534f;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+/* Animation Styles */
+.fade-in {
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Cart Styles */
+.cart-badge {
+    transition: all 0.3s ease;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.empty-cart-message {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.no-products {
+    text-align: center;
+    padding: 60px;
+    font-size: 1.2rem;
+    color: #666;
+    grid-column: 1 / -1;
+}
+
+.order-item-cart {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
 }
