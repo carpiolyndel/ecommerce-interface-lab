@@ -1,85 +1,33 @@
-/**
- * Laboratory 6 - DOM Scripting
- * E-commerce Application with Vanilla JavaScript
- * 
- * Name: [Your Name]
- * Section: [Your Section]
- * Date: [Current Date]
- * 
- * This JavaScript makes the e-commerce website work.
- * It handles products, shopping cart, checkout, and account pages.
- */
-
 // ========================================
 // TASK 1: PRODUCT DATA (Make products dynamic)
 // ========================================
 
-/**
- * Product Class - Like a blueprint to create product objects
- * 
- * Instead of hardcoding HTML, we create a blueprint for each product
- */
 class Product {
     constructor(id, name, price, image, description, category) {
-        this.id = id;           // Product number (1, 2, 3...)
-        this.name = name;       // Product name
-        this.price = price;     // Price (number only, CSS adds ₱ sign)
-        this.image = image;     // Image filename
-        this.description = description;  // Product description
-        this.category = category;        // Type: spray, lotion, or wipes
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.image = image;
+        this.description = description;
+        this.category = category;
     }
 }
 
-/**
- * Products Array - Contains all products
- * 
- * Required: Must have 10 products
- * Each product is created using the Product class above
- */
 const products = [
-    new Product(1, "OFF!® Overtime", 12.99, "download.jpg", 
-        "Long-lasting protection for outdoor activities. Provides up to 8 hours of mosquito protection.",
-        "spray"),
-    
-    new Product(2, "OFF!® Baby", 9.99, "download1.jpg",
-        "Gentle formula for babies and sensitive skin. Safe for the whole family.",
-        "lotion"),
-    
-    new Product(3, "OFF!® FamilyCare", 14.99, "download2.jpg",
-        "Family-friendly protection for all ages. Perfect for family outings.",
-        "spray"),
-    
-    new Product(4, "OFF!® Sakura-No-Hana Lotion", 8.99, "download4.jpg",
-        "Plant-based protection with a gentle formula. Pleasant scent.",
-        "lotion"),
-    
-    new Product(5, "OFF!® Sakura-No-Hana Spritz", 7.99, "download5.jpg",
-        "Refreshing spray with plant-based ingredients. Light fragrance.",
-        "spray"),
-    
-    new Product(6, "OFF!® Active Sport", 11.99, "download.jpg",
-        "Sweat-resistant formula for active individuals. Great for sports.",
-        "spray"),
-    
-    new Product(7, "OFF!® Kids", 10.99, "download1.jpg",
-        "Formulated for children ages 2 and up. Gentle protection.",
-        "lotion"),
-    
-    new Product(8, "OFF!® Family Wipes", 6.99, "download2.jpg",
-        "Convenient wipes for on-the-go protection. Easy to apply.",
-        "wipes"),
-    
-    new Product(9, "OFF!® Deep Woods", 13.99, "download4.jpg",
-        "Maximum protection for camping and hiking. Long-lasting.",
-        "spray"),
-    
-    new Product(10, "OFF!® Sensitive Skin", 12.49, "download5.jpg",
-        "Fragrance-free for sensitive skin. Gentle yet effective.",
-        "lotion")
+    new Product(1, "OFF!® Overtime", 12.99, "download.jpg", "Long-lasting protection for outdoor activities. Provides up to 8 hours of mosquito protection.", "spray"),
+    new Product(2, "OFF!® Baby", 9.99, "download1.jpg", "Gentle formula for babies and sensitive skin. Safe for the whole family.", "lotion"),
+    new Product(3, "OFF!® FamilyCare", 14.99, "download2.jpg", "Family-friendly protection for all ages. Perfect for family outings.", "spray"),
+    new Product(4, "OFF!® Sakura-No-Hana Lotion", 8.99, "download4.jpg", "Plant-based protection with a gentle formula. Pleasant scent.", "lotion"),
+    new Product(5, "OFF!® Sakura-No-Hana Spritz", 7.99, "download5.jpg", "Refreshing spray with plant-based ingredients. Light fragrance.", "spray"),
+    new Product(6, "OFF!® Active Sport", 11.99, "download.jpg", "Sweat-resistant formula for active individuals. Great for sports.", "spray"),
+    new Product(7, "OFF!® Kids", 10.99, "download1.jpg", "Formulated for children ages 2 and up. Gentle protection.", "lotion"),
+    new Product(8, "OFF!® Family Wipes", 6.99, "download2.jpg", "Convenient wipes for on-the-go protection. Easy to apply.", "wipes"),
+    new Product(9, "OFF!® Deep Woods", 13.99, "download4.jpg", "Maximum protection for camping and hiking. Long-lasting.", "spray"),
+    new Product(10, "OFF!® Sensitive Skin", 12.49, "download5.jpg","Fragrance-free for sensitive skin. Gentle yet effective.", "lotion")
 ];
 
 // ========================================
-// TASK 3: SHOPPING CART (Shopping functionality)
+// TASK 3: SHOPPING CART
 // ========================================
 
 // Cart array - Stores items added to cart
@@ -124,13 +72,13 @@ function showMessage(message, type) {
     
     // Color depends on message type
     if (type === 'success') {
-        msg.style.backgroundColor = '#28a745';  // Green - success
+        msg.style.backgroundColor = '#28a745';  // Green for success
         msg.style.color = 'white';
     } else if (type === 'error') {
-        msg.style.backgroundColor = '#d9534f';  // Red - error
+        msg.style.backgroundColor = '#d9534f';  // Red for error
         msg.style.color = 'white';
     } else {
-        msg.style.backgroundColor = '#ff6600';  // Orange - info
+        msg.style.backgroundColor = '#ff6600';  // Orange for info
         msg.style.color = 'white';
     }
     
@@ -208,21 +156,15 @@ function updateCartQuantity(productId, newQuantity) {
     }
 }
 
-/**
- * Calculate totals - Calculates total price
- * 
- * reduce() method - Used to add all item prices in cart
- * Like a for loop but shorter
- */
 function calculateTotals() {
     // reduce() - starts at 0, then adds price × quantity for each item
     const subtotal = cart.reduce((total, item) => {
         return total + (item.price * item.quantity);
     }, 0);
     
-    const shipping = subtotal > 0 ? 50 : 0;  // ₱50 shipping if cart not empty
-    const tax = subtotal * 0.08;              // 8% tax
-    const total = subtotal + shipping + tax;   // Grand total
+    const shipping = subtotal > 0 ? 50 : 0; 
+    const tax = subtotal * 0.08;           
+    const total = subtotal + shipping + tax;
     
     return { subtotal, shipping, tax, total };
 }
@@ -261,18 +203,6 @@ function updateCartCount() {
 // TASK 2: PRODUCTS PAGE (products.html)
 // ========================================
 
-/**
- * Render products - Shows all products on products.html
- * 
- * This is the most important function for Task 2
- * 
- * Steps:
- * 1. Find the container (products-container)
- * 2. Clear the container
- * 3. Loop through each product (using forEach)
- * 4. Create elements for each product (createElement)
- * 5. Add elements to the page (appendChild)
- */
 function renderProducts() {
     // Step 1: Find the container where products will go
     const productContainer = document.querySelector('.products-container');
@@ -339,37 +269,34 @@ function renderProducts() {
     attachFilterEventListeners();
 }
 
-// Event listeners for product buttons
+// Event listeners for product buttons - USING EVENT DELEGATION
 function attachProductEventListeners() {
-    // View Details buttons - go to detail page
-    const viewButtons = document.querySelectorAll('.view-details');
-    viewButtons.forEach(btn => {
-        btn.addEventListener('click', function() {
-            const productId = this.getAttribute('data-id');
-            sessionStorage.setItem('selectedProductId', productId);  // Save ID
-            window.location.href = 'detail.html';  // Go to detail page
-        });
-    });
-    
-    // Add to Cart buttons - add to cart
-    const addButtons = document.querySelectorAll('.add-to-cart-btn');
-    addButtons.forEach(btn => {
-        btn.addEventListener('click', function() {
-            const productId = parseInt(this.getAttribute('data-id'));
-            const productName = this.getAttribute('data-name');
-            const productPrice = parseFloat(this.getAttribute('data-price'));
+    // ONE event listener sa buong document body (Event Delegation)
+    document.body.addEventListener('click', function(event) {
+        // Check if Add to Cart button ang na-click
+        if (event.target.classList.contains('add-to-cart-btn')) {
+            const productId = parseInt(event.target.getAttribute('data-id'));
+            const productName = event.target.getAttribute('data-name');
+            const productPrice = parseFloat(event.target.getAttribute('data-price'));
             
             addToCart(productId, productName, productPrice);
             
             // Task 6: Animation effect - card flashes when clicked
-            const productCard = this.closest('.product-card');
+            const productCard = event.target.closest('.product-card');
             if (productCard) {
                 productCard.classList.add('fade-in');
                 setTimeout(() => {
                     productCard.classList.remove('fade-in');
                 }, 500);
             }
-        });
+        }
+        
+        // Check if View Details button ang na-click
+        if (event.target.classList.contains('view-details')) {
+            const productId = event.target.getAttribute('data-id');
+            sessionStorage.setItem('selectedProductId', productId);  // Save ID
+            window.location.href = 'detail.html';  // Go to detail page
+        }
     });
 }
 
@@ -464,7 +391,8 @@ function renderFilteredProducts(filteredProducts) {
         productContainer.appendChild(productCard);
     });
     
-    attachProductEventListeners();
+    // No need to call attachProductEventListeners() because event delegation is already set up
+    // attachProductEventListeners(); // REMOVED - event delegation handles it
 }
 
 // ========================================
@@ -792,41 +720,82 @@ function renderProductDetail() {
         });
     }
     
-    // Review form
-    const ratingSlider = document.getElementById('rating');
-    const ratingValue = document.getElementById('rating-value');
-    if (ratingSlider && ratingValue) {
-        ratingSlider.addEventListener('input', function() {
-            ratingValue.textContent = this.value;
-        });
+    //Reviews and rating here
+    const ratingGroup = document.getElementById('rating-group');
+
+if (ratingGroup) {
+    ratingGroup.innerHTML = `
+        <label style="display:block;margin-bottom:10px;font-weight:bold;">Rating:</label>
+        <div id="star-container" style="display:flex;gap:8px;margin-bottom:10px;"></div>
+        <input type="hidden" id="rating" value="0">
+        <p id="rating-text" style="margin-top:5px;font-size:12px;color:#666;">Click on stars to rate</p>
+    `;
+    
+    const starContainer = document.getElementById('star-container');
+    let currentRating = 0;
+    const stars = [];
+    
+    for (let i = 1; i <= 5; i++) {
+        const star = document.createElement('span');
+        star.innerHTML = '☆';
+        star.style.cssText = 'font-size:30px;color:#ffcc00;cursor:pointer;';
+        star.setAttribute('data-value', i);
+        
+        star.onmouseenter = () => updateStars(i);
+        star.onmouseleave = () => updateStars(currentRating);
+        star.onclick = () => {
+            currentRating = i;
+            updateStars(currentRating);
+            document.getElementById('rating').value = currentRating;
+            document.getElementById('rating-text').textContent = 
+                ['', 'Poor', 'Fair', 'Good', 'Very Good', 'Excellent'][currentRating];
+        };
+        
+        starContainer.appendChild(star);
+        stars.push(star);
     }
     
-    const reviewForm = document.getElementById('review-form');
-    if (reviewForm) {
-        reviewForm.addEventListener('submit', function(event) {
-            event.preventDefault();
-            const reviewText = document.getElementById('review-text');
-            const rating = document.getElementById('rating');
-            
-            if (reviewText.value.trim()) {
-                const reviewsContainer = document.getElementById('reviews-container');
-                const newReview = document.createElement('div');
-                newReview.className = 'review-item';
-                newReview.innerHTML = `
-                    <p><strong>${currentUser.name}</strong>: <span>${reviewText.value}</span></p>
-                    <p>Rating: ${rating ? rating.value : 0}/5 ★</p>
-                    <small>${new Date().toLocaleDateString()}</small>
-                `;
-                reviewsContainer.appendChild(newReview);
-                reviewText.value = '';
-                if (rating) rating.value = 0;
-                if (ratingValue) ratingValue.textContent = '0';
-                showMessage('Thank you for your review!', 'success');
-            } else {
-                showMessage('Please write a review first', 'error');
-            }
+    function updateStars(rating) {
+        stars.forEach((star, idx) => {
+            star.innerHTML = idx < rating ? '★' : '☆';
         });
     }
+}
+
+const reviewForm = document.getElementById('review-form');
+if (reviewForm) {
+    reviewForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const reviewText = document.getElementById('review-text');
+        const rating = document.getElementById('rating').value;
+        
+        if (!reviewText.value.trim()) return alert('Please write a review');
+        if (rating == 0) return alert('Please select a rating');
+        
+        const stars = '★'.repeat(rating) + '☆'.repeat(5 - rating);
+        const labels = ['', 'Poor', 'Fair', 'Good', 'Very Good', 'Excellent'];
+        
+        const newReview = document.createElement('div');
+        newReview.className = 'review-item';
+        newReview.style.cssText = 'border:1px solid #ddd;border-radius:8px;padding:15px;margin-bottom:15px;background:#f9f9f9;';
+        newReview.innerHTML = `
+            <div style="display:flex;justify-content:space-between;margin-bottom:10px;">
+                <strong>${currentUser.name}</strong>
+                <span style="color:#ffcc00;">${stars}</span>
+            </div>
+            <div style="color:#ff6600;margin-bottom:8px;">${labels[rating]} (${rating}/5)</div>
+            <p style="margin:10px 0;">"${reviewText.value.trim()}"</p>
+            <small>${new Date().toLocaleDateString()}</small>
+        `;
+        
+        document.getElementById('reviews-container').appendChild(newReview);
+        reviewText.value = '';
+        document.getElementById('rating').value = '0';
+        updateStars(0);
+        document.getElementById('rating-text').textContent = 'Click on stars to rate';
+        alert('Thank you for your review!');
+    });
+}
 }
 
 // ========================================
@@ -863,7 +832,7 @@ function renderLandingPage() {
         });
     }
     
-    // Show discounted products (next 3)
+    // Show discounted products
     if (discountedContainer) {
         discountedContainer.innerHTML = '';
         const discountedProducts = products.slice(3, 6);
@@ -897,87 +866,14 @@ function renderLandingPage() {
 }
 
 // ========================================
-// ADD CSS ANIMATION STYLES (TASK 6)
-// ========================================
-
-// Add animation styles to page
-function addAnimationStyles() {
-    if (!document.getElementById('lab6-animation-styles')) {
-        const style = document.createElement('style');
-        style.id = 'lab6-animation-styles';
-        style.textContent = `
-            .fade-in {
-                animation: fadeIn 0.5s ease;
-            }
-            
-            @keyframes fadeIn {
-                from {
-                    opacity: 0;
-                    transform: translateY(20px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-            
-            .error {
-                border-color: #d9534f !important;
-                background-color: rgba(217,83,79,0.08) !important;
-            }
-            
-            .error-message {
-                color: #d9534f;
-                font-size: 0.85rem;
-                margin-top: 5px;
-                display: block;
-                animation: fadeIn 0.3s ease;
-            }
-            
-            .empty-cart-message {
-                text-align: center;
-                padding: 40px;
-                color: #666;
-                font-size: 1.1rem;
-            }
-            
-            .cart-badge {
-                transition: all 0.3s ease;
-            }
-            
-            .no-products {
-                text-align: center;
-                padding: 60px;
-                font-size: 1.2rem;
-                color: #666;
-                grid-column: 1 / -1;
-            }
-            
-            .order-item-cart {
-                display: flex;
-                justify-content: space-between;
-                padding: 10px 0;
-                border-bottom: 1px solid #eee;
-            }
-            
-            button:active {
-                transform: scale(0.98);
-            }
-        `;
-        document.head.appendChild(style);
-    }
-}
-
-// ========================================
 // INITIALIZATION - STARTS EVERYTHING
 // ========================================
 
 // When page loads, start everything
 document.addEventListener('DOMContentLoaded', function() {
-    loadCart();              // Load saved cart
-    addAnimationStyles();    // Add animations
-    updateCartCount();       // Update cart badge
-    
+    loadCart();  
+    updateCartCount();       
+
     const path = window.location.pathname;
     
     // Run the right function for each page

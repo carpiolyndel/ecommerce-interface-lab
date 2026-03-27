@@ -1,9 +1,8 @@
 /* ========================================
-   LABORATORY 2 & 3: PRODUCT DETAILS PAGE STYLES
+   PRODUCT DETAILS PAGE STYLES
    ======================================== */
 
-/* ========== LAB 1 TASK 3: PRODUCT DETAIL LAYOUT ========== */
-
+/* ========== PRODUCT DETAIL LAYOUT ========== */
 .product-detail {
     display: flex;
     flex-wrap: wrap;
@@ -37,7 +36,6 @@
     color: var(--primary-color);
 }
 
-/* FIXED: Price Style with Peso Sign */
 .product-price {
     font-size: 1.8rem;
     color: var(--accent-color);
@@ -46,13 +44,11 @@
     display: block;
 }
 
-/* Add peso sign using pseudo-element */
 .product-price::before {
     content: "₱";
     margin-right: 2px;
 }
 
-/* Alternative if using .price class */
 .price {
     font-size: 1.8rem;
     color: var(--accent-color);
@@ -66,7 +62,7 @@
     margin-right: 2px;
 }
 
-/* ========== LAB 1 TASK 3: ADD TO CART FORM ========== */
+/* ========== ADD TO CART FORM ========== */
 .add-to-cart-form {
     background-color: var(--bg-light);
     padding: 20px;
@@ -108,7 +104,7 @@
     background-color: var(--hover-color);
 }
 
-/* ========== LAB 2 TASK 5: TABLE STYLING ========== */
+/* ========== TECHNICAL SPECIFICATIONS ========== */
 .specifications {
     margin-bottom: 40px;
 }
@@ -146,7 +142,6 @@ table td {
     border: 1px solid var(--border);
 }
 
-/* Lab 2 Task 5: first-child styling */
 table td:first-child {
     font-weight: bold;
     color: var(--primary-color);
@@ -154,69 +149,83 @@ table td:first-child {
     width: 30%;
 }
 
-/* ========== LAB 1 TASK 3: USER REVIEWS ========== */
-.reviews {
-    margin-bottom: 40px;
+/* ========== REVIEW SECTION ========== */
+#reviews-container {
+    margin-bottom: 30px;
 }
 
-.reviews h2 {
-    font-size: 1.8rem;
-    color: var(--primary-color);
-    margin-bottom: 20px;
-}
-
-.review {
+.review-item {
     background-color: var(--white);
     padding: 20px;
     margin: 15px 0;
     border-radius: 8px;
     border: 1px solid var(--border);
-}
-
-.review strong {
-    display: block;
-    margin-bottom: 5px;
-    color: var(--primary-color);
-    font-size: 1.1rem;
-}
-
-.review p {
-    color: var(--text-secondary);
-    line-height: 1.6;
-}
-
-/* ========== LAB 2 TASK 5: QUOTATION MARKS ========== */
-.review {
     position: relative;
-    padding: 25px 30px;
-    background-color: var(--white);
-    border-radius: 8px;
+    padding-left: 35px;
+    transition: all 0.3s ease;
+}
+
+.review-item:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     border-left: 4px solid var(--accent-color);
 }
 
-.review::before {
+.review-item::before {
     content: "“";
-    font-size: 2.5rem;
+    font-size: 2rem;
     position: absolute;
     left: 10px;
-    top: -5px;
+    top: 5px;
     color: var(--accent-color);
-    opacity: 0.3;
+    opacity: 0.5;
     font-family: Georgia, serif;
 }
 
-.review::after {
-    content: "”";
-    font-size: 2.5rem;
-    position: absolute;
-    right: 15px;
-    bottom: -15px;
-    color: var(--accent-color);
-    opacity: 0.3;
-    font-family: Georgia, serif;
+.review-item p {
+    margin: 5px 0;
+    color: var(--text-secondary);
 }
 
-/* Review Form */
+.review-item strong {
+    color: var(--primary-color);
+}
+
+.review-item small {
+    color: #888;
+    font-size: 0.8rem;
+    display: block;
+    margin-top: 8px;
+}
+
+/* ========== STAR RATING ========== */
+#rating-group {
+    margin-bottom: 20px;
+}
+
+.star-rating {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.star-rating span {
+    font-size: 30px;
+    color: #ffcc00;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.star-rating span:hover {
+    transform: scale(1.1);
+}
+
+#rating-text {
+    margin-top: 5px;
+    font-size: 12px;
+    color: #666;
+}
+
+/* ========== REVIEW FORM ========== */
 .review-form {
     background-color: var(--white);
     padding: 20px;
@@ -238,13 +247,6 @@ table td:first-child {
     color: var(--primary-color);
 }
 
-.review-form input[type="range"] {
-    width: 100%;
-    max-width: 300px;
-    margin-bottom: 15px;
-}
-
-.review-form input[type="text"],
 .review-form textarea {
     width: 100%;
     padding: 10px;
@@ -252,14 +254,10 @@ table td:first-child {
     border-radius: 4px;
     font-family: inherit;
     margin-bottom: 15px;
-}
-
-.review-form textarea {
     resize: vertical;
     min-height: 80px;
 }
 
-.review-form input:focus,
 .review-form textarea:focus {
     outline: 2px solid var(--accent-color);
     border-color: var(--accent-color);
@@ -280,79 +278,7 @@ table td:first-child {
     background-color: var(--hover-color);
 }
 
-/* Review Items */
-.review-item {
-    background-color: var(--white);
-    padding: 20px;
-    margin: 15px 0;
-    border-radius: 8px;
-    border: 1px solid var(--border);
-    position: relative;
-    padding-left: 35px;
-}
-
-.review-item::before {
-    content: "“";
-    font-size: 2rem;
-    position: absolute;
-    left: 10px;
-    top: 5px;
-    color: var(--accent-color);
-    opacity: 0.5;
-    font-family: Georgia, serif;
-}
-
-.review-item p {
-    margin: 0;
-    color: var(--text-secondary);
-}
-
-.review-item strong {
-    color: var(--primary-color);
-}
-
-/* Article Reviews */
-article p {
-    position: relative;
-    font-style: italic;
-    padding: 10px 20px;
-    margin-bottom: 15px;
-    background-color: var(--bg-light);
-    border-radius: 8px;
-    animation: fadeIn 1s ease-in-out;
-}
-
-article p::before {
-    content: "“";
-    font-size: 2rem;
-    position: absolute;
-    left: 10px;
-    top: -5px;
-    color: var(--accent-2);
-}
-
-article p::after {
-    content: "”";
-    font-size: 2rem;
-    position: absolute;
-    right: 10px;
-    bottom: -5px;
-    color: var(--accent-2);
-}
-
-/* Input Styles */
-input[type="number"],
-input[type="text"],
-input[type="range"] {
-    width: 100%;
-    padding: 8px;
-    margin: 5px 0 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-
-/* Button Styles */
+/* ========== BUTTON STYLES ========== */
 button {
     background-color: var(--accent-color);
     color: var(--white);
@@ -370,20 +296,6 @@ button:hover {
 
 button:active {
     transform: scale(0.95);
-}
-
-/* Section Animation */
-section {
-    animation: fadeIn 1s ease-in-out;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    margin-top: 30px;
-    padding: 20px;
-    background-color: var(--muted-bg);
-    color: var(--text-main);
 }
 
 /* ========== ANIMATIONS ========== */
@@ -410,76 +322,14 @@ footer {
     }
 }
 
-/* ========== RESPONSIVE DESIGN ========== */
-@media (max-width: 768px) {
-    .product-detail {
-        flex-direction: column;
-        gap: 20px;
-        padding: 20px;
-    }
-    
-    .product-image {
-        min-width: auto;
-    }
-    
-    .product-info {
-        min-width: auto;
-    }
-    
-    .product-price,
-    .price {
-        font-size: 1.5rem;
-    }
-    
-    .product-info h1 {
-        font-size: 1.5rem;
-    }
-    
-    .specifications h2,
-    .reviews h2 {
-        font-size: 1.3rem;
-    }
-    
-    table td:first-child {
-        width: 40%;
-    }
-    
-    .review-form {
-        padding: 15px;
-    }
+section {
+    animation: fadeIn 1s ease-in-out;
 }
 
-@media (max-width: 480px) {
-    main {
-        padding: 15px;
-    }
-    
-    .product-detail {
-        padding: 15px;
-    }
-    
-    .product-price,
-    .price {
-        font-size: 1.3rem;
-    }
-    
-    .add-to-cart-form input[type="number"] {
-        width: 100%;
-    }
-    
-    table td,
-    table th {
-        padding: 8px;
-        font-size: 0.85rem;
-    }
-    
-    .review-item {
-        padding: 15px;
-        padding-left: 30px;
-    }
-    
-    .review-item::before {
-        font-size: 1.5rem;
-        left: 8px;
-    }
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: var(--muted-bg);
+    color: var(--text-main);
 }
